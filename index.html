@@ -52,10 +52,33 @@
       <p>
         I'm currently working on creating a basic version of Amazon. This project involves using HTML, CSS, and JavaScript to replicate key features like product listings, search, and shopping cart functionality. It's helping me learn how to design and build user-friendly websites while improving my coding skills
       </p>
+      <p>
+        <a href="https://dnyaneshpise.github.io/WebDevPracticum/amazon-clone/" target="_blank">
+          chekcout live site of amazon clone project
+        </a>
+      </p>
     </section>
   </div>
+
+  <div class="footer">Made with ❤️ by Dnyanesh</div>
+  <div id="randomText">#arcade</div>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var textElement = document.getElementById("randomText");
+      function updatePosition() {
+        var randomX = Math.floor(Math.random() * (window.innerWidth - textElement.offsetWidth));
+        var randomY = Math.floor(Math.random() * (window.innerHeight - textElement.offsetHeight));
+        textElement.style.left = randomX + "px";
+        textElement.style.top = randomY + "px";
+      }
+      updatePosition();
+      setInterval(function() {
+        updatePosition();
+      }, 5000);
+    });
+  </script>
 </body>
 
 </html>

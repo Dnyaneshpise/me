@@ -25,6 +25,13 @@ div {
   display: flex;
   align-items: center;
   margin: 0 20px; /* Spacing between links */
+  
+  box-shadow: 0 2px 4px rgba(255, 240, 240, 0.019);
+  transition: box-shadow 0.3s ease-in-out; 
+}
+.socialInfo a:hover {
+  text-decoration:none;
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2); /* Increase shadow on hover */
 }
 section {
   padding: 20px;
@@ -70,6 +77,24 @@ hr {
   background: #494949;
 }
 
+.footer{
+  color: white;
+  text-align: center;
+}
+
+.workInfo a{
+  font-family: "Montserrat Alternates";
+  font-weight: normal;
+}
+
+#randomText {
+  position: absolute;
+  font-size: 24px;
+  color: #ffffff86;
+  font-weight: bold;
+  background-color: transparent;
+}
+
 @media screen and (max-width: 600px) {
   .socialInfo div {
       flex-direction: column; /* Stack links vertically */
@@ -79,5 +104,6 @@ hr {
   .socialInfo a {
       display: block; /* Ensure links take full width */
       margin: 10px 0; /* Add vertical margin between links */
+      font-size: 20px;
   }
 }
