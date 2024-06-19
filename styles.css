@@ -1,33 +1,43 @@
-/* styles.css */
-
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #272626;
-  color: #fff;
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 20px;
+  background-color: #111111;
   margin: 0;
   padding: 0;
 }
 
 div {
+  font-family: "Montserrat Alternates";
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background: #272626;
+  background: #111111;
   
 }
-.socialInfo div{
-  box-shadow: 0 0 10px rgba(201, 237, 238, 0.5);
+.socialInfo div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.socialInfo a {
+  display: flex;
+  align-items: center;
+  margin: 0 20px; /* Spacing between links */
+}
 section {
   padding: 20px;
   box-sizing: border-box;
 }
 
 h3 {
-  color: #fff;
+  color: #ffffff;
   padding-bottom: 5px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  font-style: normal;
 }
 
 p {
@@ -35,7 +45,11 @@ p {
 }
 
 a {
-  color: #00FFFF;
+  font-family: "Playwrite NG Modern", cursive;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  color: rgb(242, 242, 226);
   text-decoration: none;
   display: block;
   margin: 10px 0;
@@ -47,7 +61,7 @@ a:hover {
 
 ion-icon {
   vertical-align: middle;
-  margin-right: 5px;
+  margin-right: 6px;
 }
 
 hr {
@@ -56,3 +70,14 @@ hr {
   background: #494949;
 }
 
+@media screen and (max-width: 600px) {
+  .socialInfo div {
+      flex-direction: column; /* Stack links vertically */
+      align-items: flex-start; /* Center-align items horizontally */
+  }
+
+  .socialInfo a {
+      display: block; /* Ensure links take full width */
+      margin: 10px 0; /* Add vertical margin between links */
+  }
+}
