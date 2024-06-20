@@ -149,8 +149,19 @@ hr {
 }
 
 .socialInfo a {
-      display: block; /* Ensure links take full width */
-      margin: 10px 0; /* Add vertical margin between links */
+      display: block; 
+      margin: 10px 0; 
       font-size: 20px;
   }
 
+  @media screen and (max-width: 600px) {
+    .socialInfo div {
+        flex-direction: column; /* Stack links vertically */
+        align-items: flex-start; /* Center-align items horizontally */
+    }
+    .socialInfo a {
+        display: block; /* Ensure links take full width */
+        margin: 10px 0; /* Add vertical margin between links */
+        font-size: 20px;
+    }
+  }
