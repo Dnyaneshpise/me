@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
 body {
   font-family: "Lilita One", sans-serif;
   font-weight: 400;
@@ -20,18 +25,21 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 60px;
 }
 .socialInfo a {
   display: flex;
   align-items: center;
-  margin: 0 20px; /* Spacing between links */
-  
+  margin: 0 10px;
+  padding: 0 15px;
+  background-color: transparent;
   box-shadow: 0 2px 4px rgba(255, 240, 240, 0.019);
   transition: box-shadow 0.3s ease-in-out; 
 }
 .socialInfo a:hover {
   text-decoration:none;
-  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2); /* Increase shadow on hover */
+  border-radius: 10px;
+  box-shadow:0 1px 20px rgba(12, 220, 231, 0.753) inset;
 }
 section {
   padding: 20px;
@@ -73,7 +81,7 @@ ion-icon {
 
 hr {
   border: 0;
-  height: 1px;
+  height: 0.5px;
   background: #494949;
 }
 
@@ -85,6 +93,7 @@ hr {
 .workInfo a{
   font-family: "Montserrat Alternates";
   font-weight: normal;
+  color: rgb(48, 105, 238);
 }
 
 #randomText {
@@ -94,16 +103,54 @@ hr {
   font-weight: bold;
   background-color: transparent;
 }
-
-@media screen and (max-width: 600px) {
-  .socialInfo div {
-      flex-direction: column; /* Stack links vertically */
-      align-items: flex-start; /* Center-align items horizontally */
+@keyframes slide {
+  from{
+    transform: translateX(0);
+  }to {
+    transform: translateX(-100%);
   }
+}
+.logos {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 60px 0;
+  background-color: #111111;
+  position: relative;
+}
+.logos:before,.logos:after{
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: " ";
+  z-index: 2;
+}
+.logos:before{
+  left: 0;
+  background:linear-gradient(to left,rgba(255, 255, 255, 0),#111111);
 
-  .socialInfo a {
+}
+.logos:after{
+  right: 0;
+  background:linear-gradient(to right,rgb(255,255,255,0),#111111);
+
+}
+.logos:hover .logos-slide{
+  animation-play-state: paused;
+}
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+.logos-slide i {
+  color: white;
+  font-size: 40px;
+  margin: 0 40px;
+}
+
+.socialInfo a {
       display: block; /* Ensure links take full width */
       margin: 10px 0; /* Add vertical margin between links */
       font-size: 20px;
   }
-}
+
